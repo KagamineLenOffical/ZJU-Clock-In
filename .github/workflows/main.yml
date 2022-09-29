@@ -6,7 +6,6 @@ on:
       - master
   watch:
     types: started
-  workflow_dispatch:
   schedule:
     - cron: 0 */4 * * *
 
