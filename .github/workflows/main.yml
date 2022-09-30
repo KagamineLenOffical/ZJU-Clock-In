@@ -6,8 +6,9 @@ on:
       - master
   watch:
     types: started
+  workflow_dispatch:
   schedule:
-    - cron: 0 */4 * * *
+    - cron: 0 */12 * * *
 
 jobs:
   ClockIn:
@@ -25,8 +26,6 @@ jobs:
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          ACCOUNT2: ${{ secrets.ACCOUNT_2 }}
-          PASSWORD2: ${{ secrets.PASSWORD_2 }}
         run: |
           python3 clock-in.py ${ACCOUNT} ${PASSWORD}
           python3 clock-in.py ${ACCOUNT} ${PASSWORD}
