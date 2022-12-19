@@ -75,6 +75,7 @@ class ClockIn(object):
             html = res.content.decode()
 
         try:
+            print(html)
             old_infos = re.findall(r'oldInfo: ({[^\n]+})', html)
             if len(old_infos) != 0:
                 old_info = json.loads(old_infos[0])
